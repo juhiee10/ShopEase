@@ -1,0 +1,409 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg shop-navbar">
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            <i class="bi bi-bag-fill"></i>
+            <span>ShopEase</span>
+        </a>
+
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <form class="search-box mx-auto">
+                <input type="search" placeholder="Search products, brands and more...">
+
+                <select class="category-select">
+                    <option>All Categories</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Mobiles</option>
+                    <option>Gaming</option>
+                    <option>Accessories</option>
+                </select>
+
+                <button class="search-btn">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            <div class="navbar-icons">
+
+                <a href="#" class="nav-item-custom">
+                    <i class="bi bi-heart"></i>
+                    <small>Wishlist</small>
+                </a>
+
+                <a href="#" class="nav-item-custom">
+                    <i class="bi bi-box-seam"></i>
+                    <small>Orders</small>
+                </a>
+
+                <a href="#" class="nav-item-custom position-relative">
+                    <i class="bi bi-cart3"></i>
+                    <small>Cart</small>
+                    <span class="cart-badge">2</span>
+                </a>
+
+                <div class="dropdown">
+
+                    <a class="profile dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <img src="https://ui-avatars.com/api/?name={{ user.username }}&background=144701&color=ffffff" alt="Profile">
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li class="profile-header text-center">
+                            <img src="https://ui-avatars.com/api/?name={{ user.username }}&background=144701&color=ffffff" alt="Profile">
+                            <h6>{{ user.username }}</h6>
+                            <small>{{ user.email }}</small>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-person"></i> My Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-box-seam"></i> My Orders
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-heart"></i> Wishlist
+                            </a>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <a class="dropdown-item text-danger" href="{% url 'logout' %}">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-banner">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="sale-badge">🔥 MEGA SALE 2026</span>
+
+                    <h1 class="hero-title">
+                        Discover Premium <span>Electronics</span> At Amazing Prices
+                    </h1>
+
+                    <p class="hero-text">
+                        Shop smartphones, laptops, headphones, gaming accessories,
+                        smart watches and thousands of premium products with
+                        exclusive discounts.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-shop">Shop Now</a>
+                        <a href="#" class="btn btn-outline-dark ms-3">Explore</a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900"
+                         class="hero-image"
+                         alt="Hero">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="container py-5">
+
+<h2 class="section-title text-center mb-5">Why Shop With Us</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+<div class="service-card">
+<i class="bi bi-truck"></i>
+<h5>Free Shipping</h5>
+<p>Free delivery on all orders above ₹999.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="service-card">
+<i class="bi bi-shield-check"></i>
+<h5>Secure Payment</h5>
+<p>100% secure payments with trusted gateways.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="service-card">
+<i class="bi bi-arrow-repeat"></i>
+<h5>Easy Returns</h5>
+<p>7-day hassle-free return and replacement.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="service-card">
+<i class="bi bi-headset"></i>
+<h5>24×7 Support</h5>
+<p>Friendly customer support whenever you need.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!--======================
+SHOP BY CATEGORY
+=======================-->
+
+<section class="container py-5">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h2 class="section-title mb-0">Shop by Category</h2>
+
+<a href="#" class="btn btn-shop">View All</a>
+
+</div>
+
+<div class="category-list">
+
+<button class="category-btn">All</button>
+
+<button class="category-btn">
+<i class="bi bi-phone"></i>
+Mobiles
+</button>
+
+<button class="category-btn">
+<i class="bi bi-laptop"></i>
+Laptops
+</button>
+
+<button class="category-btn">
+<i class="bi bi-headphones"></i>
+Audio
+</button>
+
+<button class="category-btn">
+<i class="bi bi-smartwatch"></i>
+Smart Watches
+</button>
+
+<button class="category-btn">
+<i class="bi bi-controller"></i>
+Gaming
+</button>
+
+<button class="category-btn">
+<i class="bi bi-camera"></i>
+Cameras
+</button>
+
+<button class="category-btn">
+<i class="bi bi-tv"></i>
+Televisions
+</button>
+
+</div>
+
+</section>
+<!-- ================= PRODUCTS ================= -->
+
+<section class="container my-5">
+
+    <h3 class="section-title">Featured Products</h3>
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="card product-card">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h5>Wireless Headphones</h5>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <p class="price">
+                        ₹2,500
+                    </p>
+
+                    <button class="btn btn-view w-100 mb-2">
+                        View Details
+                    </button>
+
+                    <button class="btn btn-cart w-100">
+                        <i class="bi bi-cart-plus"></i>
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card product-card">
+
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h5>Smart Watch</h5>
+
+                    <div class="rating">
+                        ★★★★☆
+                    </div>
+
+                    <p class="price">
+                        ₹5,000
+                    </p>
+
+                    <button class="btn btn-view w-100 mb-2">
+                        View Details
+                    </button>
+
+                    <button class="btn btn-cart w-100">
+                        <i class="bi bi-cart-plus"></i>
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card product-card">
+
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h5>Gaming Mouse</h5>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <p class="price">
+                        ₹1,800
+                    </p>
+
+                    <button class="btn btn-view w-100 mb-2">
+                        View Details
+                    </button>
+
+                    <button class="btn btn-cart w-100">
+                        <i class="bi bi-cart-plus"></i>
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <div class="container text-center">
+
+        <h2>Stay Updated</h2>
+
+        <p>Subscribe to receive exclusive deals and new arrivals.</p>
+
+        <form class="newsletter-form">
+
+            <input type="email"
+                   placeholder="Enter your email">
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 ShopEase • Built with Django ❤️
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
