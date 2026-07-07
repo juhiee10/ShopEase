@@ -1,11 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+from .models import Product
+
 
 @login_required
 def product_list(request):
-    return render(request, "products/products.html")
+    products = Product.objects.all()
+
+    return render(request, "products/products.html", {
+        "products": products
+    })
+
 
 @login_required
 def product_detail(request, id):
-    return render(request, "products/product_detail.html")
+    product = get_object_or_404(Product, id=id)
+
+    return render(request, "products/product_detail.html", {
+        "product": product
+    })
